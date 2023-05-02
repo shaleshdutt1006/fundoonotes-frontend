@@ -7,8 +7,10 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class DashboardComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  PasswordFormControl = new FormControl('', [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})'),
-  ]);
+  PasswordFormControl = new FormControl('', [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})')]);
+  firstNameFormControl = new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-zA-Z]*$/)]);
+  lastNameFormControl = new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-zA-Z]*$/)]);
+  addressFormControl = new FormControl('', [Validators.required, Validators.maxLength(15)]);
 
   getErrorMessage(control: FormControl, fieldName: string): string {
     if (control.hasError('required')) {
@@ -22,6 +24,8 @@ export class DashboardComponent {
     }
     return '';
   }
+  login() {
 
+  }
 
 }

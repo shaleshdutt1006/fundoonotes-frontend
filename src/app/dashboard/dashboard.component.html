@@ -1,105 +1,109 @@
-<div class="center-content">
-    <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+<div class="main">
+    <div class="center-content">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Login/Register</mat-card-title>
+                <mat-card-subtitle>Fundoonotes</mat-card-subtitle>
+            </mat-card-header>
+            <mat-tab-group animationDuration="0ms">
+                <mat-tab label="Login">
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <mat-icon matSuffix>email</mat-icon>
+                            <input type="email" matInput [formControl]="emailFormControl"
+                                placeholder="Ex. pat@example.com">
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
 
-        </mat-card-header>
-        <mat-tab-group animationDuration="0ms">
-            <mat-tab label="Login">
-                <form class="example-form">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input type="password" matInput [formControl]="PasswordFormControl" placeholder="Ex. ">
-                        <mat-error *ngIf="PasswordFormControl.invalid">{{ getErrorMessage(PasswordFormControl,
-                            'password') }}</mat-error>
-                        <mat-error *ngIf="PasswordFormControl.hasError('required')">
-                            Password is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </mat-tab>
-            <mat-tab label="Register">
-                <form class="example-form">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>First Name</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error
-                            *ngIf="emailFormControl.hasError('firstname') && !emailFormControl.hasError('required')">
-                            Please enter valid FirstName
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            FirstName is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </mat-tab>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-icon matSuffix>lock</mat-icon>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput [formControl]="PasswordFormControl" placeholder="Ex. ">
+                            <mat-error *ngIf="PasswordFormControl.invalid">{{ getErrorMessage(PasswordFormControl,
+                                'password') }}</mat-error>
+                        </mat-form-field>
+                        <button class="mat-button" mat-button (click)="login()">Log In</button>
 
-        </mat-tab-group>
-        <mat-card-content>
+                    </form>
+                </mat-tab>
+                <mat-tab label=" Register">
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input type="firstName" matInput [formControl]="firstNameFormControl"
+                                placeholder="Enter First Name">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <mat-error *ngIf="firstNameFormControl.hasError('pattern')">Please enter a valid First
+                                Name</mat-error>
+                            <mat-error *ngIf="firstNameFormControl.hasError('required')">
+                                FirstName is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-icon matSuffix>perm_identity</mat-icon>
+                            <mat-label>Last Name</mat-label>
+                            <input type="lastName" matInput [formControl]="lastNameFormControl"
+                                placeholder="Enter Last Name">
+                            <mat-error
+                                *ngIf="lastNameFormControl.hasError('pattern') && !lastNameFormControl.hasError('required')">
+                                Please enter valid Last Name
+                            </mat-error>
+                            <mat-error *ngIf="lastNameFormControl.hasError('required')">
+                                LastName is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email Id</mat-label>
+                            <mat-icon matSuffix>email</mat-icon>
+                            <input type="email" matInput [formControl]="emailFormControl"
+                                placeholder="Ex. pat@example.com">
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-label>Address</mat-label>
+                            <input type="address" matInput [formControl]="addressFormControl"
+                                placeholder="Enter Address">
+                            <mat-error *ngIf="addressFormControl.hasError('maxlength')">
+                                Address max character length should be 15
+                            </mat-error>
+                            <mat-error *ngIf="addressFormControl.hasError('required')">
+                                Address is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-icon matSuffix>lock</mat-icon>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput [formControl]="PasswordFormControl" placeholder="Ex. ">
+                            <mat-error *ngIf="PasswordFormControl.invalid">{{ getErrorMessage(PasswordFormControl,
+                                'password') }}</mat-error>
+                        </mat-form-field>
 
-        </mat-card-content>
-        <mat-card-actions>
+                        <button class="mat-button" mat-button>Register</button>
+                    </form>
 
-        </mat-card-actions>
-    </mat-card>
+                </mat-tab>
+
+            </mat-tab-group>
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions>
+
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>

@@ -10,6 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button'
+
+import { MatIconModule } from '@angular/material/icon'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatCardModule, MatTabsModule, MatInputModule, ReactiveFormsModule, FormsModule, BrowserAnimationsModule, NoopAnimationsModule
+    MatCardModule, MatTabsModule, MatInputModule, ReactiveFormsModule, FormsModule, BrowserAnimationsModule, NoopAnimationsModule, MatButtonModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
